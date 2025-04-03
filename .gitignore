@@ -1,3 +1,4 @@
+# ignore specific file
 .env
 
 # Logs
