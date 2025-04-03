@@ -37,7 +37,7 @@ const AllProductsPage = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/products')
+    fetch('http://localhost:3000/api/products')
       .then(res => res.json())
       .then(data => setProducts(data))
       .catch(err => console.error("Error loading products:", err));
