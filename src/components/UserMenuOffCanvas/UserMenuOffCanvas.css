@@ -1,0 +1,64 @@
+.offcanvas-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 500px;
+    height: 100vh;
+    background: #fff;
+    z-index: 999;
+    box-shadow: -2px 0 6px rgba(0,0,0,0.1);
+    padding: 2rem 1.5rem;
+    transition: right 0.3s ease-in-out;
+  }
+  
+  .offcanvas-menu.open {
+    right: 0;
+  }
+  
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    z-index: 998;
+    display: none;
+  }
+  
+  .overlay.show {
+    display: block;
+  }
+  
+  .offcanvas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .menu-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1rem 0;
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  
+  .menu-list li:hover {
+    color: goldenrod;
+  }
+  

@@ -1,0 +1,50 @@
+.navbar {
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eee;
+    font-family: 'Poppins', sans-serif;
+    
+  }
+
+  .navbar__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: calc(1250px + 2rem);
+    margin: 0 auto;
+    width: 100%;
+
+  }
+  
+  .navbar__logo a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1A2B3C; /* Primary color */
+  }
+  
+  .navbar__tagline {
+    font-size: 1.2rem;
+    color: #555;
+    letter-spacing: 1px;
+  }
+  
+  .navbar__icons {
+    display: flex;
+    gap: 1.2rem;
+  }
+  
+  .navbar__icon {
+    font-size: 1.5rem;
+    color: #1A2B3C;
+    transition: color 0.3s;
+  }
+  
+  .navbar__icon:hover {
+    color: #D4A857; 
+  }
+
+  .navbar__icon.active {
+    color: #D4A857; 
+  }
