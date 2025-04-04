@@ -42,13 +42,15 @@
 
 .footer-socials {
   margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 .footer-socials a {
-  margin-right: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: #F6C566;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
 
 .footer-socials a:hover {
