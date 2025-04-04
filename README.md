@@ -64,13 +64,9 @@ npm run dev
 Deployed via **Netlify**:
 👉 https://precious-lokum-1796e6.netlify.app
 
-## 📸 Screenshots
-
-_Add mockup images and screenshots here if available._
-
 ## 🙌 Credits
 
-Created by **Carolina Prado** as a final project at Ironhack.
+Created by **Paulo Prado** as a final project at Ironhack.
 
 ## 📃 License
 
