@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from '../services/api';
+import api from '../services/api';
 import { addToCart } from '../utils/cartUtils';
 
 const ProductPage = () => {
@@ -8,7 +8,7 @@ const ProductPage = () => {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    axios.get(`/products/${id}`)
+    api.get(`/products/${id}`)
       .then(res => setProduct(res.data))
       .catch(err => {
         console.error('Error loading product:', err);
