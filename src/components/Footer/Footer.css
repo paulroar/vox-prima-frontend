@@ -1,68 +1,97 @@
 .vox-footer {
-    background-color: #378285;
-    color: #fff;
-    padding: 3rem 1rem;
+  background-color: #378285;
+  color: #fff;
+  padding: 3rem 1.5rem 2rem;
+  font-family: sans-serif;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  gap: 2rem;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-column h4 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.footer-column p,
+.footer-column a {
+  font-size: 0.95rem;
+  margin: 0.3rem 0;
+  color: #F6C566;
+  text-decoration: none;
+  display: block;
+  transition: 0.3s;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.footer-socials {
+  margin-top: 1rem;
+}
+
+.footer-socials a {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  color: #F6C566;
+  transition: 0.3s;
+}
+
+.footer-socials a:hover {
+  color: #fff;
+}
+
+.footer-country p {
+  margin: 0.4rem 0;
+  font-size: 0.9rem;
+}
+
+.footer-logo {
+  width: 45px;
+  margin-right: 1rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #D4A857;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin-top: 4rem;
   }
-  
-  .footer-content {
-    max-width: 1000px;
-    margin: 0 auto;
+
+  .footer-column {
+    margin-bottom: 2rem;
   }
-  
-  .footer-logo {
-    width: 180px;
-    margin-bottom: 1rem;
-  }
-  
-  .footer-tagline {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    font-weight: 500;
-    color: #E0CB9E;
-  }
-  
-  .footer-links {
-    display: flex;
+
+  .footer-socials {
     justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
   }
-  
-  .footer-links a {
-    color: #F6C566;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
+
+  .footer-bottom {
+    font-size: 0.75rem;
   }
-  
-  .footer-links a:hover {
-    color: #fff;
-  }
-  
-  .footer-copy {
-    font-size: 0.85rem;
-    color: #D4A857;
-  }
-  
-  @media (max-width: 600px) {
-    .footer-logo {
-      width: 140px;
-    }
-  
-    .footer-links {
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-  
-    .footer-tagline {
-      font-size: 1rem;
-    }
-  
-    .footer-copy {
-      font-size: 0.75rem;
-    }
-  }
-  
+}
