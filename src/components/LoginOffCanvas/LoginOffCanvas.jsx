@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 import { FiX, FiUser } from 'react-icons/fi';
 import './LoginOffCanvas.css';
 import { UserContext } from '../../context/UserContext';
+import api from '../../services/api';
+
 
 const LoginOffCanvas = ({ isOpen, onClose }) => {
   const { login } = useContext(UserContext);
@@ -13,15 +15,9 @@ const LoginOffCanvas = ({ isOpen, onClose }) => {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('https://vox-prima-backend.fly.dev/api/users/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form)
-      });
+      const data = await api.post('/users/login', form);
 
-      const data = await response.json();
-
-      if (response.ok) {
+      if (data.token) {
         login(data);
         onClose();
       } else {
