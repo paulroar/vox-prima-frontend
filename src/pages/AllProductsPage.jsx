@@ -21,7 +21,7 @@ const AllProductsPage = () => {
         <div className="products-grid">
           {products.map(product => (
             <Link
-              to={`/product/${product._id}`}
+              to={`/products/${product._id}`}
               key={product._id}
               className="product-card"
             >
