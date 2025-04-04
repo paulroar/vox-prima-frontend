@@ -1,12 +1,77 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# VÖX PRIMA – Frontend
 
-Currently, two official plugins are available:
+Welcome to the frontend of **VÖX PRIMA**, a fashion e-commerce application focused on creative expression through unique t-shirt prints. Built with React, the app delivers a modern, dynamic, and responsive shopping experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- Browse a full catalog of shirts with artwork focused on **nature**, **music**, and **art**.
+- View individual product pages with detailed images and descriptions.
+- Add products to cart and complete purchases.
+- Login, register, and personalized user area.
+- View past orders (My Orders).
+- Mobile-first responsive layout.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔧 Technologies Used
+
+- **React** (SPA)
+- **React Router DOM**
+- **CSS Modules**
+- **Cloudinary** for hosting product images
+- **LocalStorage** for managing cart and user token
+
+## 🌐 Environment Variables
+
+Create a `.env` file in the root folder with:
+
+```
+VITE_API_BASE_URL=https://vox-prima-backend.fly.dev/api
+```
+
+## 📁 Folder Structure
+
+```
+src/
+│
+├── assets/               # Logos, images, etc.
+├── components/           # Navbar, Footer, etc.
+├── context/              # Global context (e.g., UserContext)
+├── pages/                # Page-level components (Home, Product, Orders...)
+├── services/             # API abstraction
+├── styles/               # CSS files
+└── utils/                # Utilities (e.g., cart management)
+```
+
+## 🛠️ Setup
+
+1. Clone the repo:
+```bash
+git clone https://github.com/youruser/vox-prima-frontend.git
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start development server:
+```bash
+npm run dev
+```
+
+## 🔗 Deployment
+
+Deployed via **Netlify**:
+👉 https://precious-lokum-1796e6.netlify.app
+
+## 📸 Screenshots
+
+_Add mockup images and screenshots here if available._
+
+## 🙌 Credits
+
+Created by **Carolina Prado** as a final project at Ironhack.
+
+## 📃 License
+
+MIT
