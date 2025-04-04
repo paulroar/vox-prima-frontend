@@ -10,7 +10,7 @@ const api = axios.create({
 });
 
 */
-const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api`;
 
 const api = {
   get: (endpoint) => fetch(`${BASE_URL}${endpoint}`).then(res => res.json()),
