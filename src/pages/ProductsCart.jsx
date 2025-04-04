@@ -58,7 +58,7 @@ const ProductsCart = () => {
                 <div className="cart-item-info">
                   <h4>{item.name}</h4>
                   <p>Size: G</p>
-                  <p>Color: Preto Noir</p>
+                  <p>Color: </p>
                   <div className="cart-item-controls">
                     <button
                       onClick={() =>

@@ -13,7 +13,7 @@ const LoginOffCanvas = ({ isOpen, onClose }) => {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/users/login', {
+      const response = await fetch('https://vox-prima-backend.fly.dev/api/users/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)
