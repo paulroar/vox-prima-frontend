@@ -17,6 +17,10 @@ const MyAccountPage = () => {
               Authorization: `Bearer ${token}`,
             },
           });
+
+          console.log('API Response:', response);
+
+
           setUserData(response.data);
           setForm({
             name: response.data.name,
