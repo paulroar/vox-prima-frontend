@@ -52,7 +52,7 @@ const MyAccountPage = () => {
 
   return (
     <div className="account-page">
-      <h2 className="account-heading">Hello, {userData.name} :)</h2>
+      <h2 className="account-heading">Hello, {userData?.name?.split(' ')[0] || 'User'} :)</h2>
 
       <div className="account-section">
         <h3>Account Details</h3>
