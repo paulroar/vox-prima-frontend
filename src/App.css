@@ -248,6 +248,8 @@ a {
   font-size: 1.2rem;
 }
 
+/* ✅ MOBILE RESPONSIVE */
+
 @media (max-width: 560px) {
   .product-container {
     flex-direction: column;
@@ -270,12 +272,25 @@ a {
     scroll-snap-type: x mandatory;
   }
 
+  .product-thumbnails::-webkit-scrollbar {
+    display: none; /* Remove a barra de rolagem no iOS/Android */
+  }
+
   .thumb {
     flex: 0 0 auto;
     width: 120px;
     height: 230px;
     scroll-snap-align: center;
     border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .thumb.variant1 {
+    filter: sepia(25%);
+  }
+
+  .thumb.variant2 {
+    filter: hue-rotate(190deg);
   }
 
   .product-details {
@@ -289,6 +304,7 @@ a {
     width: 100%;
   }
 }
+
 
 /* Pages/RegisterPage.css */
 /* Pages/Login.jsx */
