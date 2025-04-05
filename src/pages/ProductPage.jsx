@@ -27,7 +27,13 @@ const ProductPage = () => {
     <div className="product-page">
       <div className="product-container">
 
-        {/* Thumbnails */}
+         {/* Thumbnails - Desktop */}
+         <div className="product-thumbnails">
+          <img src={product.image} className="thumb variant1" alt="variant1" />
+          <img src={product.image} className="thumb variant2" alt="variant2" />
+        </div>
+
+        {/* Thumbnails - Mobile Carousel */}
         <div className="thumbnail-carousel">
           <img src={product.image} className="thumb variant1" alt="variant1" />
           <img src={product.image} className="thumb variant2" alt="Variant2" />
