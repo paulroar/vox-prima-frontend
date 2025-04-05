@@ -13,7 +13,13 @@ const api = axios.create({
 const BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api`;
 
 const api = {
-  get: (endpoint) => fetch(`${BASE_URL}${endpoint}`).then(res => res.json()),
+  get: (endpoint) =>
+    fetch(`${BASE_URL}${endpoint}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }).then(res => res.json()),
   post: (endpoint, data) =>
     fetch(`${BASE_URL}${endpoint}`, {
       method: "POST",
