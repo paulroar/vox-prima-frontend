@@ -22,7 +22,7 @@ const CheckoutPage = () => {
     const token = localStorage.getItem('token');
 
     try {
-      const response = await api.post(
+      const data = await api.post(
         '/orders',
         {
           orderItems: cartItems.map(item => ({
@@ -39,7 +39,7 @@ const CheckoutPage = () => {
       );
 
       saveCart([]);
-      navigate(`/order-success/${response.data._id}`);
+      navigate(`/order-success/${data._id}`);
     } catch (error) {
       console.error('Failed to place order:', error);
     }
