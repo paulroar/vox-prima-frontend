@@ -13,10 +13,10 @@ const OrderSuccess = () => {
     const fetchOrder = async () => {
       const token = user?.token || localStorage.getItem('token');
       try {
-        const res = await api.get(`/orders/${id}`, {
+        const data = await api.get(`/orders/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
-        setOrder(res.data);
+        setOrder(data);
       } catch (error) {
         console.error('Failed to fetch order:', error);
       }

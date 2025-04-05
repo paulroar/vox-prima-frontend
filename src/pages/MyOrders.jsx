@@ -8,12 +8,12 @@ const MyOrders = () => {
     const fetchOrders = async () => {
       const token = localStorage.getItem('token');
       try {
-        const res = await api.get('/orders/my-orders', {
+        const data = await api.get('/orders/my-orders', {
           headers: {
             Authorization: `Bearer ${token}`
           }
         });
-        setOrders(res.data);
+        setOrders(data);
       } catch (err) {
         console.error("Error fetching orders:", err);
       }
