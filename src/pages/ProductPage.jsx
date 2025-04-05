@@ -9,7 +9,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     api.get(`/products/${id}`)
-      .then(res => setProduct(res.data))
+      .then(data => setProduct(data))
       .catch(err => {
         console.error('Error loading product:', err);
       });
