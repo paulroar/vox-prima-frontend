@@ -21,10 +21,10 @@ const MyAccountPage = () => {
           console.log('API Response:', response);
 
 
-          setUserData(response.data);
+          setUserData(response);
           setForm({
-            name: response.data.name,
-            email: response.data.email,
+            name: response.name,
+            email: response.email,
           });
         } catch (error) {
           console.error('Error fetching user data:', error);
