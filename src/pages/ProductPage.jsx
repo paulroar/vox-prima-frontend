@@ -28,7 +28,7 @@ const ProductPage = () => {
       <div className="product-container">
 
         {/* Thumbnails */}
-        <div className="product-thumbnails">
+        <div className="thumbnail-carousel">
           <img src={product.image} className="thumb variant1" alt="variant1" />
           <img src={product.image} className="thumb variant2" alt="Variant2" />
         </div>
