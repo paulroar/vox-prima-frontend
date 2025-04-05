@@ -12,7 +12,7 @@ const Footer = () => {
           <h4>CONTACT</h4>
           <p>hello@voxprima.com</p>
           <p>VÖX PRIMA Studio</p>
-          <p>Avenida José Elias Garcia, 184</p>
+          <p>Avenida José Elias Garcia</p>
           <p>2745-143, Queluz, Portugal</p>
 
           <div className="footer-socials">
