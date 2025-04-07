@@ -27,13 +27,12 @@ const Navbar = () => {
         />
 
         <div className="navbar__container">
-          {/* Left: Logo */}
+          {/* Linha 1: Logo e ícones */}
           <div className="navbar__top-row">
             <div className="navbar__logo">
               <Link to="/">VÖX PRIMA</Link>
             </div>
 
-            {/* Right: Icons */}
             <div className="navbar__icons">
               <button
                 onClick={() => {
@@ -43,7 +42,7 @@ const Navbar = () => {
                 aria-label="User"
               >
                 <FiUser
-                  className={`navbar__icon ${isLoggedIn ? "active" : ""}`}
+                  className={`navbar__icon ${isLoggedIn ? 'active' : ''}`}
                 />
               </button>
 
@@ -56,13 +55,13 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Center: Tagline */}
+          {/* Linha 2: Tagline */}
           <div className="navbar__tagline">
             <Link to="/products">Find your style</Link>
           </div>
         </div>
       </nav>
-
+      
       {/* OffCanvas Menu */}
       <UserMenuOffCanvas
         isOpen={showUserMenu}
