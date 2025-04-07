@@ -634,6 +634,33 @@ a {
   background-color: #DB5935;
 }
 
+@media (max-width: 560px) {
+  .checkout-page {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .checkout-section {
+    padding: 1rem;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .checkout-summary {
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .checkout-button {
+    font-size: 1rem;
+    padding: 12px;
+    margin-top: 1rem;
+    border-radius: 8px;
+  }
+}
+
 /* OrderSuccess Page style */
 
 .order-success-container {
