@@ -1,13 +1,11 @@
-import React, { useContext, useState } from 'react';
-import './Navbar.css';
-import { Link } from 'react-router-dom';
-import { FiUser, FiShoppingBag } from 'react-icons/fi';
-import UserMenuOffCanvas from '../UserMenuOffCanvas/UserMenuOffCanvas';
-import LoginOffCanvas from '../LoginOffCanvas/LoginOffCanvas';
-import { UserContext } from '../../context/UserContext';
-import { getCart } from '../../utils/cartUtils';
-
-
+import React, { useContext, useState } from "react";
+import "./Navbar.css";
+import { Link } from "react-router-dom";
+import { FiUser, FiShoppingBag } from "react-icons/fi";
+import UserMenuOffCanvas from "../UserMenuOffCanvas/UserMenuOffCanvas";
+import LoginOffCanvas from "../LoginOffCanvas/LoginOffCanvas";
+import { UserContext } from "../../context/UserContext";
+import { getCart } from "../../utils/cartUtils";
 
 const Navbar = () => {
   const { user } = useContext(UserContext);
@@ -15,7 +13,6 @@ const Navbar = () => {
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [showLoginMenu, setShowLoginMenu] = useState(false);
   const cartItems = getCart();
-
 
   return (
     <>
@@ -31,35 +28,37 @@ const Navbar = () => {
 
         <div className="navbar__container">
           {/* Left: Logo */}
-          <div className="navbar__logo">
-            <Link to="/">VÖX PRIMA</Link>
+          <div className="navbar__top">
+            <div className="navbar__logo">
+              <Link to="/">VÖX PRIMA</Link>
+            </div>
+
+            {/* Right: Icons */}
+            <div className="navbar__icons">
+              <button
+                onClick={() => {
+                  isLoggedIn ? setShowUserMenu(true) : setShowLoginMenu(true);
+                }}
+                className="icon-btn"
+                aria-label="User"
+              >
+                <FiUser
+                  className={`navbar__icon ${isLoggedIn ? "active" : ""}`}
+                />
+              </button>
+
+              <Link to="/cart" className="cart-icon" aria-label="Cart">
+                <FiShoppingBag className="navbar__icon" />
+                {cartItems.length > 0 && (
+                  <span className="cart-count">{cartItems.length}</span>
+                )}
+              </Link>
+            </div>
           </div>
 
           {/* Center: Tagline */}
           <div className="navbar__tagline">
             <Link to="/products">Find your style</Link>
-          </div>
-
-          {/* Right: Icons */}
-          <div className="navbar__icons">
-            <button
-              onClick={() => {
-                isLoggedIn ? setShowUserMenu(true) : setShowLoginMenu(true);
-              }}
-              className="icon-btn"
-              aria-label="User"
-            >
-              <FiUser
-                className={`navbar__icon ${isLoggedIn ? "active" : ""}`}
-              />
-            </button>
-
-            <Link to="/cart" className="cart-icon" aria-label="Cart">
-              <FiShoppingBag className="navbar__icon" />
-              {cartItems.length > 0 && (
-                <span className="cart-count">{cartItems.length}</span>
-              )}
-            </Link>
           </div>
         </div>
       </nav>
