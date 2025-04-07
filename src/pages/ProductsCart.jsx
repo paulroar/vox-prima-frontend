@@ -40,7 +40,7 @@ const ProductsCart = () => {
     <div className="cart-container">
       {cartItems.length === 0 ? (
         <div className="empty-cart">
-          <img src="/images/empty-cart-stage1.gif" alt="Empty cart" />
+          <img src="/images/empty-cart-stage1.jpg" alt="Empty cart" />
           <p className="empty-message">
             This cart feels like an empty stage... where’s the headliner?”
           </p>
