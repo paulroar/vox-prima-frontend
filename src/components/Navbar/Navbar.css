@@ -21,7 +21,7 @@
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #1A2B3C; /* Primary color */
+    color: #1A2B3C; 
   }
   
   .navbar__tagline {
@@ -48,3 +48,45 @@
   .navbar__icon.active {
     color: #D4A857; 
   }
+
+  /* Cart Icon with Counter */
+.cart-icon {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #DB5935;
+  color: white;
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 600px) {
+  .navbar__container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .navbar__logo {
+    order: 1;
+  }
+
+  .navbar__tagline {
+    order: 2;
+    font-size: 1rem;
+    margin-left: 0;
+  }
+
+  .navbar__icons {
+    order: 3;
+    align-self: flex-end;
+    margin-top: 0.5rem;
+  }
+}

@@ -5,6 +5,8 @@ import { FiUser, FiShoppingBag } from 'react-icons/fi';
 import UserMenuOffCanvas from '../UserMenuOffCanvas/UserMenuOffCanvas';
 import LoginOffCanvas from '../LoginOffCanvas/LoginOffCanvas';
 import { UserContext } from '../../context/UserContext';
+import { getCart } from '../../utils/cartUtils';
+
 
 
 const Navbar = () => {
@@ -12,6 +14,8 @@ const Navbar = () => {
   const isLoggedIn = !!user;
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [showLoginMenu, setShowLoginMenu] = useState(false);
+  const cartItems = getCart();
+
 
   return (
     <>
@@ -50,8 +54,11 @@ const Navbar = () => {
               />
             </button>
 
-            <Link to="/cart" aria-label="Cart">
+            <Link to="/cart" className="cart-icon" aria-label="Cart">
               <FiShoppingBag className="navbar__icon" />
+              {cartItems.length > 0 && (
+                <span className="cart-count">{cartItems.length}</span>
+              )}
             </Link>
           </div>
         </div>
