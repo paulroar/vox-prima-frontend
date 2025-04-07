@@ -27,7 +27,7 @@ const Navbar = () => {
         />
 
         <div className="navbar__container">
-          {/* Linha 1: Logo e ícones */}
+          {/* Line 1: Logo and icons */}
           <div className="navbar__top-row">
             <div className="navbar__logo">
               <Link to="/">VÖX PRIMA</Link>
@@ -55,14 +55,14 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Linha 2: Tagline */}
+          {/* Line 2: Tagline */}
           <div className="navbar__tagline">
             <Link to="/products">Find your style</Link>
           </div>
         </div>
       </nav>
-      
-      {/* OffCanvas Menu */}
+
+      {/* Repetition to ensure menu at end of DOM */}
       <UserMenuOffCanvas
         isOpen={showUserMenu}
         onClose={() => setShowUserMenu(false)}
