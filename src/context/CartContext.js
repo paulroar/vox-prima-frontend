@@ -1,5 +1,8 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { getCart, saveCart } from '../utils/cartUtils';
+import {
+  getCart as localGetCart,
+  saveCart as localSaveCart
+} from '../utils/cartUtils';
 
 export const CartContext = createContext();
 
@@ -7,41 +10,52 @@ export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
-    setCartItems(getCart());
+    setCartItems(localGetCart());
   }, []);
 
-  const addToCart = (item) => {
-    const existing = cartItems.find(i => i._id === item._id);
+  const saveAndUpdate = (updatedCart) => {
+    setCartItems(updatedCart);
+    localSaveCart(updatedCart);
+  };
+
+  const addToCart = (product) => {
+    const existing = cartItems.find((item) => item._id === product._id);
     let updatedCart;
 
     if (existing) {
-      updatedCart = cartItems.map(i =>
-        i._id === item._id ? { ...i, quantity: i.quantity + 1 } : i
+      updatedCart = cartItems.map((item) =>
+        item._id === product._id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
       );
     } else {
-      updatedCart = [...cartItems, { ...item, quantity: 1 }];
+      updatedCart = [...cartItems, { ...product, quantity: 1 }];
     }
 
-    setCartItems(updatedCart);
-    saveCart(updatedCart);
+    saveAndUpdate(updatedCart);
   };
 
-  const removeFromCart = (id) => {
-    const updated = cartItems.filter(i => i._id !== id);
-    setCartItems(updated);
-    saveCart(updated);
-  };
-
-  const updateQuantity = (id, qty) => {
-    const updated = cartItems.map(i =>
-      i._id === id ? { ...i, quantity: qty } : i
+  const updateQuantity = (productId, quantity) => {
+    const updatedCart = cartItems.map((item) =>
+      item._id === productId ? { ...item, quantity } : item
     );
-    setCartItems(updated);
-    saveCart(updated);
+    saveAndUpdate(updatedCart);
+  };
+
+  const removeFromCart = (productId) => {
+    const updatedCart = cartItems.filter((item) => item._id !== productId);
+    saveAndUpdate(updatedCart);
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, updateQuantity }}>
+    <CartContext.Provider
+      value={{
+        cartItems,
+        addToCart,
+        updateQuantity,
+        removeFromCart
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

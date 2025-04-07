@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext  } from 'react';
 import { useParams } from 'react-router-dom';
 import api from '../services/api';
-import { addToCart } from '../utils/cartUtils';
+//import { addToCart } from '../utils/cartUtils';
+import { CartContext } from '../context/CartContext';
+
 
 const ProductPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const { addToCart } = useContext(CartContext);
+
 
   useEffect(() => {
     api.get(`/products/${id}`)

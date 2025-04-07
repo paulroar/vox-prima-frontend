@@ -8,7 +8,6 @@ const ProductsCart = () => {
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();
 
-
   useEffect(() => {
     setCartItems(getCart());
   }, []);
