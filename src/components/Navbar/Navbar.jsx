@@ -5,14 +5,16 @@ import { FiUser, FiShoppingBag } from "react-icons/fi";
 import UserMenuOffCanvas from "../UserMenuOffCanvas/UserMenuOffCanvas";
 import LoginOffCanvas from "../LoginOffCanvas/LoginOffCanvas";
 import { UserContext } from "../../context/UserContext";
-import { getCart } from "../../utils/cartUtils";
+import { CartContext } from '../../context/CartContext';
+//import { getCart } from "../../utils/cartUtils";
 
 const Navbar = () => {
   const { user } = useContext(UserContext);
   const isLoggedIn = !!user;
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [showLoginMenu, setShowLoginMenu] = useState(false);
-  const cartItems = getCart();
+  const { cartItems } = useContext(CartContext);
+
 
   return (
     <>
