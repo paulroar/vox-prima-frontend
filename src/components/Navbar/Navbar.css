@@ -80,8 +80,7 @@
 }
 .mobile-only {
   display: none;
-  height: 0;
-  overflow: hidden;
+  
 }
 
 /* Responsive layout */
@@ -101,6 +100,8 @@
 
   .desktop-only {
     display: none;
+    height: 0;
+  overflow: hidden;
   }
 
   .mobile-only {
