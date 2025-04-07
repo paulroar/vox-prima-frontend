@@ -80,6 +80,8 @@
 }
 .mobile-only {
   display: none;
+  height: 0;
+  overflow: hidden;
 }
 
 /* Responsive layout */
