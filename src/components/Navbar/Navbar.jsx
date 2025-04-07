@@ -28,7 +28,7 @@ const Navbar = () => {
 
         <div className="navbar__container">
           {/* Left: Logo */}
-          <div className="navbar__top">
+          <div className="navbar__top-row">
             <div className="navbar__logo">
               <Link to="/">VÖX PRIMA</Link>
             </div>
