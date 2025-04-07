@@ -27,10 +27,14 @@ const Navbar = () => {
         />
 
         <div className="navbar__container">
-          {/* Line 1: Logo and icons */}
+          {/* Top row: logo + tagline (desktop) + icons */}
           <div className="navbar__top-row">
             <div className="navbar__logo">
               <Link to="/">VÖX PRIMA</Link>
+            </div>
+
+            <div className="navbar__tagline desktop-only">
+              <Link to="/products">Find your style</Link>
             </div>
 
             <div className="navbar__icons">
@@ -55,8 +59,8 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Line 2: Tagline */}
-          <div className="navbar__tagline">
+          {/* Tagline for small screens */}
+          <div className="navbar__tagline mobile-only">
             <Link to="/products">Find your style</Link>
           </div>
         </div>
