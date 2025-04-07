@@ -14,18 +14,21 @@ const CheckoutPage = () => {
   useEffect(() => {
     const items = getCart();
     setCartItems(items);
-    const total = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    const total = items.reduce(
+      (acc, item) => acc + item.price * item.quantity,
+      0
+    );
     setTotalPrice(total);
   }, []);
 
   const handleCheckout = async () => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
 
     try {
       const data = await api.post(
-        '/orders',
+        "/orders",
         {
-          orderItems: cartItems.map(item => ({
+          orderItems: cartItems.map((item) => ({
             product: item._id,
             name: item.name,
             quantity: item.quantity,
@@ -41,7 +44,7 @@ const CheckoutPage = () => {
       saveCart([]);
       navigate(`/order-success/${data._id}`);
     } catch (error) {
-      console.error('Failed to place order:', error);
+      console.error("Failed to place order:", error);
     }
   };
 
@@ -57,7 +60,9 @@ const CheckoutPage = () => {
         <h2>2. Delivery</h2>
         <p>40 Triq il-Kunzar, L-Imsida</p>
         <p>Malta - Postal Code: MSD1140 </p>
-        <p><strong>EMS</strong> - Estimated delivery: April 16</p>
+        <p>
+          <strong>EMS</strong> - Estimated delivery: April 16
+        </p>
       </div>
 
       <div className="checkout-section">
@@ -68,9 +73,15 @@ const CheckoutPage = () => {
 
       <div className="checkout-summary">
         <h2>Order Summary</h2>
-        {cartItems.map(item => (
-          <div key={item._id}>
-            <p>{item.name} - {item.quantity} x {item.price.toFixed(2)}€</p>
+        {cartItems.map((item) => (
+          <div key={item._id} className="summary-item">
+            <img src={item.image} alt={item.name} className="summary-image" />
+            <div className="summary-info">
+              <p>{item.name}</p>
+              <span>
+                {item.quantity} x {item.price.toFixed(2)}€
+              </span>
+            </div>
           </div>
         ))}
         <h3>Total: {totalPrice.toFixed(2)}€</h3>
