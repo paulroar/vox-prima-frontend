@@ -21,9 +21,10 @@ body {
   }
   
   /* 📌 Container global */
-  
+
   .main-container {
     max-width: calc(1250px + 2rem);
     margin: 0 auto;
     padding: 0 1rem;
+    padding-top: 80px;
   }
