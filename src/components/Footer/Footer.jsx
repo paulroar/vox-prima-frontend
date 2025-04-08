@@ -16,7 +16,7 @@ const Footer = () => {
           <p>Queluz, Portugal</p>
 
           <div className="footer-socials">
-            <a href="#"><i className="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/primitusart/"><i className="fab fa-instagram"></i></a>
             <a href="#"><i className="fab fa-facebook"></i></a>
             <a href="#"><i className="fab fa-pinterest"></i></a>
           </div>
