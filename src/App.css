@@ -386,22 +386,43 @@ a {
 .account-page {
   padding: 2rem;
   font-family: 'Poppins', sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .account-heading {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .account-section {
   border: 1px dashed #ccc;
   padding: 1.5rem;
   margin-bottom: 2rem;
+  border-radius: 8px;
+  position: relative;
+  background-color: #fefefe;
 }
 
 .account-section h3 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   color: #1A2B3C;
+}
+
+.account-section p,
+.account-section label,
+.account-section input {
+  margin-bottom: 0.8rem;
+  display: block;
+  width: 100%;
+}
+
+.account-section input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
 .edit-button {
@@ -410,13 +431,36 @@ a {
   border: none;
   padding: 0.6rem 1.2rem;
   cursor: pointer;
-  float: right;
   margin-top: 1rem;
+  align-self: flex-end;
+  display: inline-block;
+  transition: background-color 0.3s ease;
 }
 
 .edit-button:hover {
   background-color: #D4A857;
   color: #1A2B3C;
+}
+
+/* ✅ Responsivo para telas menores */
+@media (max-width: 600px) {
+  .account-page {
+    padding: 1.2rem;
+  }
+
+  .edit-button {
+    width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .account-heading {
+    font-size: 1.4rem;
+  }
+
+  .account-section h3 {
+    font-size: 1.2rem;
+  }
 }
 
 /* ProductsCart.css */
