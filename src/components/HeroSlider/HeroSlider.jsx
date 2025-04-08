@@ -3,7 +3,7 @@ import "./HeroSlider.css";
 
 const slides = [
   {
-    image: "https://res.cloudinary.com/dszajuzln/image/upload/v1744121832/qewynafteutxdujufiny.jpg", // substitua pelos seus URLs do Cloudinary ou locais
+    image: "https://res.cloudinary.com/dszajuzln/image/upload/v1744121832/qewynafteutxdujufiny.jpg", 
     title: "Express yourself with art",
     subtitle: "Wear pieces that tell your story",
   },
