@@ -1,21 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { FiTrash2 } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
-import { getCart, updateQuantity, removeFromCart } from '../utils/cartUtils';
-
+import { CartContext } from '../context/CartContext';
 
 const ProductsCart = () => {
-  const [cartItems, setCartItems] = useState([]);
+  const { cartItems, updateQuantity, removeFromCart } = useContext(CartContext);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    setCartItems(getCart());
-  }, []);
 
   const handleUpdateQuantity = (id, qty) => {
     if (qty < 1) return;
     updateQuantity(id, qty);
-    setCartItems(getCart());
   };
 
   const handleRemove = (id) => {
@@ -25,7 +19,6 @@ const ProductsCart = () => {
     } else {
       removeFromCart(id);
     }
-    setCartItems(getCart());
   };
 
   const goToCheckout = () => {
@@ -60,18 +53,14 @@ const ProductsCart = () => {
                   <p>Color: </p>
                   <div className="cart-item-controls">
                     <button
-                      onClick={() =>
-                        handleUpdateQuantity(item._id, item.quantity + 1)
-                      }
+                      onClick={() => handleUpdateQuantity(item._id, item.quantity + 1)}
                       disabled={item.quantity >= item.stock}
                     >
                       +
                     </button>
                     <span>{item.quantity}</span>
                     <button
-                      onClick={() =>
-                        handleUpdateQuantity(item._id, item.quantity - 1)
-                      }
+                      onClick={() => handleUpdateQuantity(item._id, item.quantity - 1)}
                       disabled={item.quantity <= 1}
                     >
                       −
@@ -95,7 +84,9 @@ const ProductsCart = () => {
             <button className="checkout-btn" onClick={goToCheckout}>
               Checkout
             </button>
-            <button className="continue-btn" onClick={() => navigate('/products')}>Continue Shopping</button>
+            <button className="continue-btn" onClick={() => navigate('/products')}>
+              Continue Shopping
+            </button>
           </div>
         </>
       )}
