@@ -89,7 +89,7 @@ a {
   color: #d4a857;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE ------------*/
 @media (max-width: 768px) {
   .recently-header {
     flex-direction: column;
