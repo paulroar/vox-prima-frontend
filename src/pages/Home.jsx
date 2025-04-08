@@ -33,7 +33,7 @@ const HomePage = () => {
         <h2>Recently Added</h2>
         <div className="products-grid-home">
           {recentlyAdded.map(product => (
-            <Link to={`/products/${product._id}`} key={product._id} className="product-card">
+            <Link to={`/products/${product._id}`} key={product._id} className="product-card-home">
               <img src={product.image} alt={product.name} />
               <h4>{product.name}</h4>
               <span>{product.price.toFixed(2)}€</span>
