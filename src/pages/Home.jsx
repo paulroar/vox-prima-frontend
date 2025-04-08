@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import api from '../services/api';
 import { Link } from 'react-router-dom';
+import HeroSlider from '../components/HeroSlider';
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
@@ -12,19 +13,8 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="home">
-      {/* HERO BANNER */}
-      <section className="hero-carousel">
-        <div className="hero-slide">
-          <img src="https://res.cloudinary.com/dszajuzln/image/upload/v1744121833/kbi7egexnybaltdzgrmf.jpg" alt="Hero 1" />
-        </div>
-        <div className="hero-slide">
-          <img src="https://res.cloudinary.com/dszajuzln/image/upload/v1744121833/u33h9fcgzqg8ttfjujj2.jpg" alt="Hero 2" />
-        </div>
-        <div className="hero-slide">
-          <img src="https://res.cloudinary.com/dszajuzln/image/upload/v1744121832/qewynafteutxdujufiny.jpg" alt="Hero 3" />
-        </div>
-      </section>
+    <div className="home-page">
+      <HeroSlider />
 
       {/* RECENTLY ADDED */}
       <section className="recently-added">
@@ -33,9 +23,9 @@ const HomePage = () => {
           <Link to="/products" className="see-all">See all →</Link>
         </div>
 
-        <div className="products-grid">
+        <div className="products-grid-home">
           {products.map((product) => (
-            <Link to={`/products/${product._id}`} key={product._id} className="product-card">
+            <Link to={`/products/${product._id}`} key={product._id} className="product-card-home">
               <img src={product.image} alt={product.name} />
               <h3>{product.name}</h3>
               <p>{product.price.toFixed(2)}€</p>
