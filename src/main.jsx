@@ -14,7 +14,7 @@ createRoot(document.getElementById("root")).render(
     <UserProvider>
       <BrowserRouter>
         <App />
-        <ToastContainer position="top-center" autoClose={1000} transition={Zoom} />
+        <ToastContainer position="top-center" autoClose={850} transition={Zoom} />
       </BrowserRouter>
     </UserProvider>
     </CartProvider>
