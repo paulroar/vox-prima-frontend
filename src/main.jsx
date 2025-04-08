@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { UserProvider } from './context/UserContext'
 import { CartProvider } from './context/CartContext';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, Zoom } from 'react-toastify';
 import './index.css'
 import App from './App.jsx'
 
@@ -14,7 +14,7 @@ createRoot(document.getElementById("root")).render(
     <UserProvider>
       <BrowserRouter>
         <App />
-        <ToastContainer position="top-right" autoClose={1500} />
+        <ToastContainer position="top-center" autoClose={1000} transition={Zoom} />
       </BrowserRouter>
     </UserProvider>
     </CartProvider>
