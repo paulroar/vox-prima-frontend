@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import api from '../services/api';
 import { Link } from 'react-router-dom';
-import HeroSlider from '../components/HeroSlider';
+import HeroSlider from '../components/HeroSlider/HeroSlider';
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
