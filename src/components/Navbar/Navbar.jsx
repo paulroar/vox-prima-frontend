@@ -16,30 +16,23 @@ const Navbar = () => {
   const { cartItems } = useContext(CartContext);
   const [isSticky, setIsSticky] = useState(false);
 
-useEffect(() => {
-  const handleScroll = () => {
-    const scrollY = window.scrollY;
-    setIsSticky(scrollY > 80); 
-  };
-
-  window.addEventListener('scroll', handleScroll);
-  return () => window.removeEventListener('scroll', handleScroll);
-}, []);
-
-useEffect(() => {
-  const handleScroll = () => {
-    const navbar = document.querySelector(".navbar");
-    if (window.scrollY > 50) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
-    }
-  };
-
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
-
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+  
+      setIsSticky(scrollY > 80); // seu hook de sticky
+  
+      const navbar = document.querySelector(".navbar");
+      if (scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    };
+  
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
