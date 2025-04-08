@@ -1,25 +1,49 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import './HomePage.css';
+import api from '../services/api';
 import { Link } from 'react-router-dom';
 
-const Home = () => {
+const HomePage = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    api.get('/products')
+      .then(data => setProducts(data))
+      .catch(err => console.error('Failed to fetch products', err));
+  }, []);
+
+  const recentlyAdded = products.slice(0, 4); 
+
   return (
-    <div className="home-container">
-      <section className="hero-placeholder">
-        <h1>Welcome</h1>
-        <p>Art that speaks. Shirts that stand out.</p>
-        <Link to="/products" className="shop-btn">Explore Collection</Link>
+    <div className="home">
+      {/* HERO BANNER */}
+      <section className="hero-carousel">
+        <div className="hero-slide">
+          <img src="https://res.cloudinary.com/SEU-CLOUD/image/upload/v1/hero1.jpg" alt="Hero 1" />
+        </div>
+        <div className="hero-slide">
+          <img src="https://res.cloudinary.com/SEU-CLOUD/image/upload/v1/hero2.jpg" alt="Hero 2" />
+        </div>
+        <div className="hero-slide">
+          <img src="https://res.cloudinary.com/SEU-CLOUD/image/upload/v1/hero3.jpg" alt="Hero 3" />
+        </div>
       </section>
 
-      <section className="home-featured">
-        <h2>Featured Designs</h2>
-      </section>
-
-      <section className="home-about">
-        <h3>About VÖX PRIMA</h3>
-        <p>We create wearable art with meaning. Every shirt is a story.</p>
+      {/* RECENTLY ADDED */}
+      <section className="recently-added">
+        <h2>Recently Added</h2>
+        <div className="products-grid">
+          {recentlyAdded.map(product => (
+            <Link to={`/products/${product._id}`} key={product._id} className="product-card">
+              <img src={product.image} alt={product.name} />
+              <h4>{product.name}</h4>
+              <span>{product.price.toFixed(2)}€</span>
+            </Link>
+          ))}
+        </div>
       </section>
     </div>
   );
 };
 
-export default Home;
+export default HomePage;
