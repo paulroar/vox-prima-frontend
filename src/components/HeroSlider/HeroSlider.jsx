@@ -3,17 +3,17 @@ import "./HeroSlider.css";
 
 const slides = [
   {
-    image: "/images/hero1.jpg", // substitua pelos seus URLs do Cloudinary ou locais
+    image: "https://res.cloudinary.com/dszajuzln/image/upload/v1744121832/qewynafteutxdujufiny.jpg", // substitua pelos seus URLs do Cloudinary ou locais
     title: "Express yourself with art",
     subtitle: "Wear pieces that tell your story",
   },
   {
-    image: "/images/hero2.jpg",
+    image: "https://res.cloudinary.com/dszajuzln/image/upload/v1744121833/kbi7egexnybaltdzgrmf.jpg",
     title: "Nature in every thread",
     subtitle: "Sustainable style inspired by the earth",
   },
   {
-    image: "/images/hero3.jpg",
+    image: "https://res.cloudinary.com/dszajuzln/image/upload/v1744121833/u33h9fcgzqg8ttfjujj2.jpg",
     title: "Find your inner rhythm",
     subtitle: "Designs inspired by music and emotion",
   },
