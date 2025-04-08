@@ -31,7 +31,7 @@ const HomePage = () => {
       {/* RECENTLY ADDED */}
       <section className="recently-added">
         <h2>Recently Added</h2>
-        <div className="products-grid">
+        <div className="products-grid-home">
           {recentlyAdded.map(product => (
             <Link to={`/products/${product._id}`} key={product._id} className="product-card">
               <img src={product.image} alt={product.name} />

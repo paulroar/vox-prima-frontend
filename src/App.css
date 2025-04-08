@@ -47,7 +47,7 @@ a {
   font-size: 2rem;
 }
 
-.products-grid {
+.products-grid-home {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
