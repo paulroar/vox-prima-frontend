@@ -6,7 +6,7 @@ const HomePage = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    api.get('//products/random/all')
+    api.get('/products/random/all')
       .then(data => setProducts(data))
       .catch(err => console.error('Failed to fetch products', err));
   }, []);
