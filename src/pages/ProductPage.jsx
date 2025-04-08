@@ -12,7 +12,6 @@ const ProductPage = () => {
   const [product, setProduct] = useState(null);
   const { addToCart } = useContext(CartContext);
 
-
   useEffect(() => {
     api.get(`/products/${id}`)
       .then(data => setProduct(data))
@@ -20,6 +19,11 @@ const ProductPage = () => {
         console.error('Error loading product:', err);
       });
   }, [id]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
 
   const handleAddToCart = () => {
     if (!product) return;
