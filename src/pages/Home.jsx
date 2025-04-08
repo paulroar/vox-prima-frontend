@@ -6,7 +6,7 @@ const HomePage = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    api.get('/products')
+    api.get('/products/random/all')
       .then(data => setProducts(data))
       .catch(err => console.error('Failed to fetch products', err));
   }, []);
@@ -18,13 +18,13 @@ const HomePage = () => {
       {/* HERO BANNER */}
       <section className="hero-carousel">
         <div className="hero-slide">
-          <img src="https://res.cloudinary.com/SEU-CLOUD/image/upload/v1/hero1.jpg" alt="Hero 1" />
+          <img src="https://res.cloudinary.com/dszajuzln/image/upload/v1744121833/kbi7egexnybaltdzgrmf.jpg" alt="Hero 1" />
         </div>
         <div className="hero-slide">
-          <img src="https://res.cloudinary.com/SEU-CLOUD/image/upload/v1/hero2.jpg" alt="Hero 2" />
+          <img src="https://res.cloudinary.com/dszajuzln/image/upload/v1744121833/u33h9fcgzqg8ttfjujj2.jpg" alt="Hero 2" />
         </div>
         <div className="hero-slide">
-          <img src="https://res.cloudinary.com/SEU-CLOUD/image/upload/v1/hero3.jpg" alt="Hero 3" />
+          <img src="https://res.cloudinary.com/dszajuzln/image/upload/v1744121832/qewynafteutxdujufiny.jpg" alt="Hero 3" />
         </div>
       </section>
 
