@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import api from '../services/api';
 //import { addToCart } from '../utils/cartUtils';
 import { CartContext } from '../context/CartContext';
+import { toast } from 'react-toastify';
+
 
 
 const ProductPage = () => {
@@ -22,7 +24,7 @@ const ProductPage = () => {
   const handleAddToCart = () => {
     if (!product) return;
     addToCart(product);
-    alert('Product added to cart!');
+    toast.success('Product added to cart!');
   };
 
   if (!product) return <p style={{ padding: '2rem' }}>Loading product...</p>;
