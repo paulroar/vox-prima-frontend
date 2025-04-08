@@ -23,14 +23,14 @@ const MyOrders = () => {
   }, []);
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <h2>My Orders</h2>
+    <div className="orders-page">
+      <h2 className="orders-title">My Orders</h2>
       {orders.map(order => (
-        <div key={order._id} style={{ border: '1px solid #ccc', margin: '1rem 0', padding: '1rem' }}>
+        <div key={order._id} className="order-card">
           <p><strong>Order ID:</strong> {order._id}</p>
           <p><strong>Total:</strong> {order.totalPrice}€</p>
           <p><strong>Status:</strong> {order.deliveryStatus}</p>
-          <ul>
+          <ul className="order-items">
             {order.orderItems.map(item => (
               <li key={item.product?._id}>
                 {item.name} — Qty: {item.quantity}
