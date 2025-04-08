@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { FiUser, FiShoppingBag } from "react-icons/fi";
@@ -14,11 +14,22 @@ const Navbar = () => {
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [showLoginMenu, setShowLoginMenu] = useState(false);
   const { cartItems } = useContext(CartContext);
+  const [isSticky, setIsSticky] = useState(false);
+
+useEffect(() => {
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    setIsSticky(scrollY > 80); 
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
 
 
   return (
     <>
-      <nav className="navbar">
+      <nav className={`navbar ${isSticky ? 'sticky' : ''}`}>
         <UserMenuOffCanvas
           isOpen={showUserMenu}
           onClose={() => setShowUserMenu(false)}

@@ -1,8 +1,15 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
 .hero-slider {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
+    padding-top: 80px;
   }
   
   .slide {
