@@ -6,12 +6,10 @@ const HomePage = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    api.get('/products/random/all')
+    api.get('//products/random/all')
       .then(data => setProducts(data))
       .catch(err => console.error('Failed to fetch products', err));
   }, []);
-
-  const recentlyAdded = products.slice(0, 4); 
 
   return (
     <div className="home">
@@ -30,13 +28,17 @@ const HomePage = () => {
 
       {/* RECENTLY ADDED */}
       <section className="recently-added">
-        <h2>Recently Added</h2>
-        <div className="products-grid-home">
-          {recentlyAdded.map(product => (
-            <Link to={`/products/${product._id}`} key={product._id} className="product-card-home">
+        <div className="recently-header">
+          <h2>Recently Added</h2>
+          <Link to="/products" className="see-all">See all →</Link>
+        </div>
+
+        <div className="products-grid">
+          {products.map((product) => (
+            <Link to={`/products/${product._id}`} key={product._id} className="product-card">
               <img src={product.image} alt={product.name} />
-              <h4>{product.name}</h4>
-              <span>{product.price.toFixed(2)}€</span>
+              <h3>{product.name}</h3>
+              <p>{product.price.toFixed(2)}€</p>
             </Link>
           ))}
         </div>
