@@ -493,7 +493,7 @@ a {
 /*---------------- Pages/MyOrders.css -----------------------------*/
 
 .orders-page {
-  max-width: 800px;
+  max-width: 970px;
   margin: 2rem auto;
   padding: 0 1rem;
   font-family: 'Poppins', sans-serif;
