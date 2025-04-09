@@ -1,10 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FiTrash2 } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
+import { UserContext } from '../context/UserContext'; 
+import LoginOffCanvas from '../components/LoginOffCanvas/LoginOffCanvas'; 
 
 const ProductsCart = () => {
   const { cartItems, updateQuantity, removeFromCart } = useContext(CartContext);
+  const { user } = useContext(UserContext); 
+  const [showLoginMenu, setShowLoginMenu] = useState(false);
   const navigate = useNavigate();
 
   const handleUpdateQuantity = (id, qty) => {
@@ -22,6 +26,10 @@ const ProductsCart = () => {
   };
 
   const goToCheckout = () => {
+    if (!user) {
+      setShowLoginMenu(true); // Open login menu if user is not logged in
+      return;
+    }
     if (cartItems.length === 0) return;
     navigate('/checkout');
   };
@@ -90,6 +98,12 @@ const ProductsCart = () => {
           </div>
         </>
       )}
+
+      {/* OffCanvas Login */}
+      <LoginOffCanvas
+        isOpen={showLoginMenu}
+        onClose={() => setShowLoginMenu(false)}
+      />
     </div>
   );
 };
