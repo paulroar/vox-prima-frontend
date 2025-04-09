@@ -329,7 +329,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
   min-height: 100vh;
   background-color: #f8f8f8;
 }
