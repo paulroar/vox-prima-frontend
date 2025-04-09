@@ -106,7 +106,7 @@ const MyAccountPage = () => {
         </label>
 
         <label className="preference-option">
-          <input type="checkbox" />I want inspiring content by email
+          <input type="checkbox" />I want inspiring content by email 
         </label>
 
         <label className="preference-option">
