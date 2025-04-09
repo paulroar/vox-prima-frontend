@@ -4,12 +4,16 @@ html, body {
     overflow-x: hidden;
   }
 
-.hero-slider {
+  .hero-slider {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
-    margin-left: calc(-50vw + 50%);
+    padding-top: 80px;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
   }
   
   .slide {
