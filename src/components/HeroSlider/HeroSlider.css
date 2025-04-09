@@ -9,7 +9,6 @@ html, body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    padding-top: 80px;
     left: 50%;
     right: 50%;
     margin-left: -50vw;
