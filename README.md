@@ -62,7 +62,7 @@ npm run dev
 ## 🔗 Deployment
 
 Deployed via **Netlify**:
-👉 https://precious-lokum-1796e6.netlify.app
+👉 https://voxprima.netlify.app/
 
 ## 🙌 Credits
 
