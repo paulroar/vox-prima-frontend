@@ -94,7 +94,7 @@ const MyAccountPage = () => {
 
       <div className="account-section">
         <h3>Password</h3>
-        <p>********</p>
+        <p>*******</p>
         <button className="edit-button">Edit →</button>
       </div>
 
